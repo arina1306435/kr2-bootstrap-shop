@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fluffy&Clean — Эко-груминг</title>
+  <title>Fluffy&Clean — Сеть премиальных груминг-салонов</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
 
-  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--olive);">
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: var(--olive);">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">Fluffy&Clean</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
@@ -17,8 +17,7 @@
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-
+          <li class="nav-item"><a class="nav-link active" href="index.html">Главная</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Услуги
@@ -28,10 +27,9 @@
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="catalog.html#grooming">Стрижка и груминг</a></li>
               <li><a class="dropdown-item" href="catalog.html#spa">SPA-уход</a></li>
-              <li><a class="dropdown-item" href="catalog.html#hygiene">Гигиена и уход</a></li>
+              <li><a class="dropdown-item" href="catalog.html#hygiene">Гигиена</a></li>
             </ul>
           </li>
-          
           <li class="nav-item"><a class="nav-link" href="about.html">О нас</a></li>
           <li class="nav-item"><a class="nav-link" href="booking.html">Запись</a></li>
         </ul>
@@ -39,58 +37,33 @@
     </div>
   </nav>
 
-  <header class="py-5 text-center">
+  <header class="py-5 text-center bg-white border-bottom">
     <div class="container py-5">
-      <h1 class="display-4 fw-bold">Эко-груминг для ваших питомцев</h1>
-      <p class="lead mb-4 text-muted">Натуральные средства, спокойная атмосфера и профессиональный уход.</p>
-      <a href="booking.html" class="btn btn-primary btn-lg">Записаться онлайн</a>
+      <h1 class="display-3 fw-bold mb-4" style="color: var(--olive);">Сеть премиальных<br>груминг-салонов</h1>
+      <p class="lead mb-4 text-muted">Профессиональный уход за собаками и кошками. Натуральная косметика и любовь к животным.</p>
+      <a href="booking.html" class="btn btn-primary btn-lg px-5 py-3">ОНЛАЙН-ЗАПИСЬ</a>
     </div>
   </header>
 
   <main class="container my-5">
-    <section class="mb-5">
-      <h2 class="text-center mb-4">Почему выбирают нас</h2>
-      <div class="row g-4 text-center">
-        <div class="col-md-4">
-          <div class="p-4 bg-white rounded shadow-sm h-100">
-            <h3 class="h5">Натуральная косметика</h3>
-            <p class="text-muted mb-0">Используем только органические шампуни без химии.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 bg-white rounded shadow-sm h-100">
-            <h3 class="h5">Опытные мастера</h3>
-            <p class="text-muted mb-0">Бережный подход к каждому питомцу.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="p-4 bg-white rounded shadow-sm h-100">
-            <h3 class="h5">Спокойствие</h3>
-            <p class="text-muted mb-0">Уютная атмосфера и никакого стресса.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
+    
+    <section class="mb-5 pb-4">
       <h2 class="text-center mb-4">Популярные услуги</h2>
       <div class="row g-4 justify-content-center"> 
-        
-        <div class="col-12 col-md-6 col-lg-5"> 
+        <div class="col-md-6 col-lg-4"> 
           <div class="card h-100">
-            <img src="images/dog-1.jpg" class="card-img-top product-img" alt="Стрижка">
+            <img src="images/dog-wet.jpg" class="card-img-top product-img" alt="Стрижка">
             <div class="card-body d-flex flex-column">
-              <h3 class="card-title h5">Эко-комплекс</h3>
+              <h3 class="card-title h5">Комплексный груминг</h3>
               <p class="card-text text-muted small flex-grow-1">Мытье органическим шампунем, сушка и стрижка.</p>
               <p class="fw-bold fs-5 text-primary mb-3">от 2800 руб.</p>
               <a href="booking.html" class="btn btn-outline-primary mt-auto">Записаться</a>
             </div>
           </div>
         </div>
-
-        <div class="col-12 col-md-6 col-lg-5"> 
+        <div class="col-md-6 col-lg-4"> 
           <div class="card h-100">
-            <img src="images/cat-spa.jpg" class="card-img-top product-img" alt="Кошка">
+            <img src="images/spa-1.jpg" class="card-img-top product-img" alt="Кошка">
             <div class="card-body d-flex flex-column">
               <h3 class="card-title h5">SPA-уход для кошек</h3>
               <p class="card-text text-muted small flex-grow-1">Бережное вычесывание и расслабляющий массаж.</p>
@@ -99,64 +72,141 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
-    <section id="loyalty" class="my-5 pt-4">
-      <h2 class="text-center mb-4">Акции и программа лояльности</h2>
-      <div class="row g-4 justify-content-center">
+
+    <section id="loyalty" class="mb-5 py-5 bg-light rounded-4">
+      <div class="container">
+        <h2 class="text-center mb-5">Акции и спецпредложения</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <div class="card border-0 shadow-sm overflow-hidden">
+              <div class="row g-0">
+                
+                <div class="col-md-5">
+                  <video class="w-100 h-100" autoplay loop muted playsinline style="object-fit: cover; min-height: 350px;">
+                    <source src="images/щенок.mp4" type="video/mp4">
+                    Ваш браузер не поддерживает видео.
+                  </video>
+                </div>
+
+                <div class="col-md-7 d-flex align-items-center bg-white">
+                  <div class="card-body p-4 p-md-5">
+                    <span class="badge bg-warning text-dark mb-3">Специальное предложение</span>
+                    <h3 class="card-title h2 mb-3">Маленькое чудо!</h3>
+                    <p class="card-text text-muted mb-4">Для щенков до 6 месяцев включительно действует особое предложение: гигиенический комплекс со скидкой <strong>30%</strong> при первом посещении.</p>
+                    <a href="booking.html" class="btn btn-primary">Записаться со скидкой</a>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5 py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h2 class="mb-4">Бутик для питомцев</h2>
+          <p class="lead text-muted mb-4">В наших салонах вас ждёт огромный выбор товаров для собак и кошек. Популярные бренды одежды, аксессуаров, профессиональная косметика и полезные лакомства.</p>
+          <a href="catalog.html" class="btn btn-outline-primary">Перейти в каталог</a>
+        </div>
+        <div class="col-lg-6">
+          <img src="images/игрушки.jpg" class="img-fluid rounded shadow-sm" alt="Бутик" style="width: 100%; max-height: 350px; object-fit: cover;">
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5 py-5 bg-white rounded-4 shadow-sm">
+      <div class="container text-center">
+        <h2 class="mb-4">Наша Академия груминга</h2>
+        <p class="text-muted mb-5 max-w-75 mx-auto">В каждый наш салон приходят профессионалы с собственной академии — площадки № 1 по обучению грумеров.</p>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <h3 class="display-4 fw-bold" style="color: var(--terracotta);">2000+</h3>
+            <p class="text-muted">Человек в сообществе грумеров</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="display-4 fw-bold" style="color: var(--terracotta);">50+</h3>
+            <p class="text-muted">Салоны открыты по всей стране</p>
+          </div>
+          <div class="col-md-4">
+            <h3 class="display-4 fw-bold" style="color: var(--terracotta);">16</h3>
+            <p class="text-muted">Лет профессионального обучения</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="py-5 mb-5">
+      <h2 class="section-title">Наши гости</h2>
+      
+      <div id="guestCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          
+          <div class="carousel-item active">
+            <div class="row justify-content-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="images/гость6.jpg" class="d-block w-100" alt="Гость" style="height: 400px; object-fit: cover; object-position: top;">
+              </div>
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="images/гость5.jpg" class="d-block w-100" alt="Гость" style="height: 400px; object-fit: cover;">
+              </div>
+              <div class="col-md-4">
+                <img src="images/гость1.jpg" class="d-block w-100" alt="Гость" style="height: 400px; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row justify-content-center">
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="images/гость2.jpg" class="d-block w-100" alt="Гость" style="height: 400px; object-fit: cover;">
+              </div>
+              <div class="col-md-4 mb-3 mb-md-0">
+                <img src="images/гость3.jpg" class="d-block w-100" alt="Гость" style="height: 400px; object-fit: cover;">
+              </div>
+              <div class="col-md-4">
+                <img src="images/гость4.jpg" class="d-block w-100" alt="Гость" style="height: 400px; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+
+        </div>
         
-        <div class="col-md-6 col-lg-5">
-          <div class="card h-100 loyalty-card-promo">
-            <div class="card-body text-center p-4">
-              <h3 class="h4 text-terracotta mb-3">Специальные акции</h3>
-              <p class="text-muted">Скидка 15% на первое посещение для новых клиентов.</p>
-              <hr>
-              <p class="mb-0"><strong>«Приведи друга»</strong> — получите скидку 500 руб. на следующую стрижку!</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-5">
-          <div class="card h-100 loyalty-card-club">
-            <div class="card-body text-center p-4">
-              <h3 class="h4 text-olive mb-3">Клубная карта</h3>
-              <p class="text-muted">Каждое 5-е посещение салона — <strong>бесплатная чистка зубов</strong> или SPA-процедура в подарок.</p>
-              <hr>
-              <p class="mb-0">Копите баллы и получайте скидки до 20% на все услуги.</p>
-            </div>
-          </div>
-        </div>
-
+        <button class="carousel-control-prev" type="button" data-bs-target="#guestCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bg-dark p-3 rounded-circle" aria-hidden="true"></span>
+          <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#guestCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon bg-dark p-3 rounded-circle" aria-hidden="true"></span>
+          <span class="visually-hidden">Следующий</span>
+        </button>
       </div>
-    </section>
-      </div>
+
     </section>
   </main>
 
   <footer class="site-footer pt-5 pb-3">
     <div class="container">
       <div class="row g-4">
-
         <div class="col-lg-3 col-md-6">
           <a class="navbar-brand fw-bold text-white fs-3 mb-3 d-block" href="index.html">Fluffy&Clean</a>
           <p class="footer-desc small mb-3">Сеть премиальных груминг-салонов для собак и кошек.</p>
-          
           <ul class="list-unstyled footer-docs">
             <li class="mb-2"><a href="#">Договор оферты</a></li>
             <li class="mb-2"><a href="#">Политика конфиденциальности</a></li>
-            <li class="mb-2"><a href="#">Согласие на обработку данных</a></li>
-            <li class="mb-2"><a href="#">Согласие на рекламную рассылку</a></li>
           </ul>
         </div>
-
         <div class="col-lg-3 col-md-6">
           <h5 class="footer-title">Контактные данные:</h5>
           <p class="mb-2 text-white">ООО "Флаффи Медиа"</p>
           <p class="mb-2">Адрес: 103064, г. Москва,<br>ул. Земляной Вал 21/2-4, стр.3</p>
           <p class="mb-2">Телефон: <a href="tel:+78005552040" class="text-white text-decoration-none border-bottom border-white">+7 (800) 555-20-40</a></p>
         </div>
-
         <div class="col-lg-3 col-md-6">
           <h5 class="footer-title">Меню:</h5>
           <ul class="list-unstyled footer-menu">
@@ -183,20 +233,13 @@
               </div>
             </div>
           </div>
-          
           <div class="mt-4 text-center">
-            <a href="booking.html" class="btn btn-outline-light rounded-pill px-4 py-2 w-100" style="border-width: 2px; font-weight: 600; letter-spacing: 1px;">
-              ОНЛАЙН-ЗАПИСЬ
-            </a>
+            <a href="booking.html" class="btn btn-outline-light rounded-pill px-4 py-2 w-100" style="border-width: 2px; font-weight: 600; letter-spacing: 1px;">ОНЛАЙН-ЗАПИСЬ</a>
           </div>
         </div>
       </div>
-
       <hr class="border-secondary mt-4 mb-3">
-      
-      <div class="text-center small text-muted">
-        &copy; 2024 - 2026 Fluffy&Clean. Все права защищены.
-      </div>
+      <div class="text-center small text-muted">&copy; 2024 - 2026 Fluffy&Clean. Все права защищены.</div>
     </div>
   </footer>
 

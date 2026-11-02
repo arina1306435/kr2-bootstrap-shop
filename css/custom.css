@@ -1,27 +1,29 @@
 /* =========================================
-   1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
+   ПРЕМИАЛЬНЫЙ СТИЛЬ С ДУШОЙ (ПАТТЕРН ЛАПОК)
    ========================================= */
 :root {
-  --bg-light: #F4F5F0;       
-  --olive: #6A7B4B;         
-  --sage: #A3B18A;        
-  --terracotta: #C87941;    
-  --terracotta-dark: #A86233;
-  --text-dark: #3A3A3A;     
-  --text-muted: #6C757D;     
+  --bg-light: #FAFAFA;       
+  --olive: #2F3E2E;          
+  --terracotta: #B85D19;     
+  --text-dark: #1A1A1A;      
+  --text-muted: #666666;     
   --white: #FFFFFF;
+  --border-color: #E0E0E0;   
 }
 
 body {
+
   background-color: var(--bg-light);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 15c-1.5 0-3 1.5-3 3.5s1.5 3.5 3 3.5 3-1.5 3-3.5-1.5-3.5-3-3.5zm-6 3c-1.5 0-3 1.5-3 3.5s1.5 3.5 3 3.5 3-1.5 3-3.5-1.5-3.5-3-3.5zm12 0c-1.5 0-3 1.5-3 3.5s1.5 3.5 3 3.5 3-1.5 3-3.5-1.5-3.5-3-3.5zm-6 7c-2.5 0-5 2-5 5s2.5 5 5 5 5-2 5-5-2.5-5-5-5z' fill='%23e5e5e5' fill-opacity='0.4' fill-rule='evenodd'/%3E%3C/svg%3E");
   color: var(--text-dark);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif; 
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  line-height: 1.6;
 }
 
-/* Плавная прокрутка для якорей */
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
@@ -29,307 +31,236 @@ html {
 
 h1, h2, h3, h4, h5, h6 {
   color: var(--olive);
-  font-weight: 700;
-  letter-spacing: -0.5px;
+  font-weight: 300; 
+  letter-spacing: 1px; 
+  text-transform: uppercase; 
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.section-title::after {
+  content: '🐾'; 
+  display: block;
+  font-size: 1.5rem;
+  color: var(--terracotta);
+  margin: 1rem auto 0;
 }
 
 /* =========================================
-   2. ОБЩИЕ КОМПОНЕНТЫ BOOTSTRAP
+   КНОПКИ
    ========================================= */
-
-/* --- Кнопки --- */
 .btn {
-  border-radius: 8px; 
+  border-radius: 0; 
   font-weight: 600;
-  padding: 0.5rem 1.5rem;
+  padding: 0.8rem 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
   transition: all 0.3s ease;
 }
 
 .btn-primary {
-  background-color: var(--terracotta);
-  border-color: var(--terracotta);
+  background-color: var(--olive);
+  border-color: var(--olive);
   color: var(--white);
 }
 
 .btn-primary:hover {
-  background-color: var(--terracotta-dark);
-  border-color: var(--terracotta-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(200, 121, 65, 0.3);
+  background-color: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--white);
 }
 
 .btn-outline-primary {
-  color: var(--terracotta);
-  border-color: var(--terracotta);
-  border-width: 2px;
+  color: var(--olive);
+  border-color: var(--olive);
+  border-width: 1px;
 }
 
 .btn-outline-primary:hover {
-  background-color: var(--terracotta);
+  background-color: var(--olive);
   color: var(--white);
-  transform: translateY(-2px);
 }
 
-/* Убираем синие фокусы у кнопок и полей */
+
 .btn:focus, .btn:active, 
 .form-control:focus, .form-select:focus {
   outline: none !important;
-  box-shadow: 0 0 0 0.25rem rgba(200, 121, 65, 0.4) !important; 
-  border-color: var(--terracotta) !important;
-}
-
-/* --- Карточки --- */
-.card {
-  border: 1px solid rgba(0,0,0,0.05);
-  border-radius: 16px;
-  background-color: var(--white);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; 
-}
-
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-}
-
-.card-img-top {
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.card-title {
-  color: var(--olive);
-}
-
-/* Картинки в карточках товаров */
-.product-img {
-  height: 250px;
-  object-fit: cover; 
-  width: 100%;
-}
-
-/* --- Бейджи и Плашки --- */
-.badge {
-  padding: 0.5em 0.8em;
-  border-radius: 20px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-.alert {
-  border-radius: 12px;
-  border: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-/* Цены */
-.text-primary {
-  color: var(--terracotta) !important;
-  font-weight: bold;
-}
-
-/* --- Формы --- */
-.form-control, .form-select {
-  border-radius: 8px;
-  border: 1px solid #ced4da;
-  padding: 0.75rem 1rem;
-  background-color: #FAFAFA;
-}
-
-.form-control:focus, .form-select:focus {
-  border-color: var(--sage);
-  box-shadow: 0 0 0 0.25rem rgba(163, 177, 138, 0.25); 
-  background-color: var(--white);
-}
-
-.input-group-text {
-  background-color: #EAEAEA;
-  border-radius: 8px 0 0 8px;
-  border: 1px solid #ced4da;
-}
-
-/* --- Таблица --- */
-.table {
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-}
-
-.table thead th {
-  background-color: var(--olive);
-  color: var(--white);
-  border: none;
-}
-
-/* --- Аккордеон (Частые вопросы) --- */
-.accordion {
-  border: none; 
-}
-
-.accordion-item {
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 12px !important; 
-  margin-bottom: 16px; 
-  background-color: var(--white);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03); 
-  overflow: hidden; 
-}
-
-.accordion-item:first-of-type {
-  border-top: 1px solid rgba(0,0,0,0.08); 
-}
-
-.accordion-button {
-  background-color: var(--white);
-  color: var(--olive);
-  font-weight: 600;
-  padding: 1.2rem 1.5rem;
   box-shadow: none !important; 
-  border: none;
-}
-
-.accordion-button:not(.collapsed) {
-  background-color: rgba(163, 177, 138, 0.1); 
-  color: var(--olive);
-}
-
-.accordion-body {
-  padding: 1.2rem 1.5rem;
-  background-color: var(--white);
-  color: var(--text-dark);
-  border-top: 1px solid rgba(0,0,0,0.05); 
-}
-
-/* =========================================
-   3. НАВИГАЦИЯ (NAVBAR)
-   ========================================= */
-.navbar {
-  background-color: var(--olive) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 1rem 0;
-}
-
-.navbar-brand {
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-}
-
-.nav-link {
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover, .nav-link.active {
-  color: #F4F5F0 !important;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-.nav-link:focus {
-  outline: none;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-/* =========================================
-   4. КАСТОМНЫЕ БЛОКИ СТРАНИЦ
-   ========================================= */
-
-/* Блок "Наши принципы" (about.html) */
-.border-olive {
   border-color: var(--olive) !important;
 }
 
-/* Блок акций и лояльности (index.html) */
-.text-terracotta {
-  color: var(--terracotta) !important;
+/* =========================================
+   КАРТОЧКИ И КАРТИНКИ
+   ========================================= */
+.card {
+  border: 1px solid var(--border-color);
+  border-radius: 0; 
+  background-color: var(--white);
+  box-shadow: none; 
+  transition: border-color 0.3s ease;
 }
 
-.text-olive {
-  color: var(--olive) !important;
+.card:hover {
+  border-color: var(--olive);
+  transform: none; 
 }
 
-.loyalty-card-promo {
-  background-color: rgba(200, 121, 65, 0.08) !important; 
-  border: 1px solid rgba(200, 121, 65, 0.2) !important;  
-}
-.loyalty-card-promo:hover {
-  background-color: rgba(200, 121, 65, 0.12) !important;
-}
 
-.loyalty-card-club {
-  background-color: rgba(163, 177, 138, 0.15) !important; 
-  border: 1px solid rgba(106, 123, 75, 0.2) !important;   
-}
-.loyalty-card-club:hover {
-  background-color: rgba(163, 177, 138, 0.2) !important;
-}
-
-#loyalty hr {
-  border-top: 1px solid rgba(0,0,0,0.1);
-  margin: 1rem 0;
+.product-img {
+  height: 300px; 
+  object-fit: cover; 
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
 }
 
 /* =========================================
-   5. БОЛЬШОЙ ПОДВАЛ (FOOTER)
+   НАВИГАЦИЯ
+   ========================================= */
+.navbar {
+  background-color: var(--white) !important;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--olive) !important;
+  text-transform: uppercase;
+}
+
+
+.navbar-brand::after {
+  content: ' 🐾';
+  font-size: 1.2rem;
+}
+
+.nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  margin: 0 10px;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--terracotta) !important;
+  text-decoration: none;
+}
+
+/* =========================================
+   ГЛАВНЫЙ БАННЕР (Hero)
+   ========================================= */
+.hero-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+/* =========================================
+   ТАБЛИЦЫ
+   ========================================= */
+.table {
+  border: 1px solid var(--border-color);
+  background-color: var(--white);
+}
+.table thead th {
+  background-color: var(--olive);
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  border-bottom: none;
+  padding: 1rem;
+}
+
+/* =========================================
+   ФОРМЫ
+   ========================================= */
+.form-control, .form-select {
+  border-radius: 0;
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  background-color: var(--white);
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--olive);
+  box-shadow: none;
+}
+
+/* =========================================
+   АККОРДЕОН
+   ========================================= */
+.accordion {
+  border: none; 
+}
+.accordion-item {
+  border: none;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 0;
+  background-color: var(--white);
+}
+.accordion-button {
+  background-color: transparent;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 1.5rem 0;
+  border-radius: 0 !important;
+  text-transform: none; 
+  letter-spacing: 0;
+}
+.accordion-button:not(.collapsed) {
+  color: var(--terracotta);
+  background-color: transparent;
+  box-shadow: none;
+}
+.accordion-body {
+  padding: 0 0 1.5rem 0;
+  color: var(--text-muted);
+}
+
+/* =========================================
+   ПОДВАЛ
    ========================================= */
 .site-footer {
-  background-color: #5e4a41; /* Теплый кофейный фон */
-  color: #d1c8c3; 
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin-top: auto; 
+  background-color: var(--olive);
+  color: #A0A0A0;
+  padding: 4rem 0 2rem;
+  margin-top: auto;
 }
-
+.site-footer h5 {
+  color: var(--white);
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
 .site-footer a {
-  color: #d1c8c3;
+  color: #A0A0A0;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.2s;
 }
-
 .site-footer a:hover {
-  color: #ffffff;
+  color: var(--white);
 }
 
-.footer-desc {
-  color: #b5a9a3;
+.site-footer .navbar-brand {
+  color: #ffffff !important;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-.footer-title {
-  color: #a89991; 
-  font-size: 0.95rem;
-  font-weight: 400;
-  margin-bottom: 1.2rem;
-}
-
-.footer-docs a,
-.footer-menu a {
-  font-size: 0.95rem;
-  display: inline-block;
-  transition: transform 0.2s ease;
-}
-
-.footer-docs a:hover,
-.footer-menu a:hover {
-  transform: translateX(3px); 
-  color: #ffffff;
-}
-
-.footer-cities p {
-  font-size: 0.95rem;
-  color: #e0d8d3;
-}
-
-/* Кнопка "Онлайн-запись" в подвале */
-.site-footer .btn-outline-light:hover {
-  background-color: #ffffff;
-  color: #5e4a41;
-}
-
-/* Разделитель и копирайт в подвале */
-.site-footer hr {
-  border-color: #7a655b !important;
-  opacity: 0.5;
-}
-.site-footer .text-muted {
-  color: #9d8e86 !important;
+.site-footer .navbar-brand::after {
+  content: ' 🐾';
+  font-size: 1.5rem;
 }
