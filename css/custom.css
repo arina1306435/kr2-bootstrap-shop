@@ -1,5 +1,5 @@
 /* =========================================
-   Цветовая палитра "Природный и спокойный"
+   1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ НАСТРОЙКИ
    ========================================= */
 :root {
   --bg-light: #F4F5F0;       
@@ -12,9 +12,6 @@
   --white: #FFFFFF;
 }
 
-/* =========================================
-   Базовые настройки
-   ========================================= */
 body {
   background-color: var(--bg-light);
   color: var(--text-dark);
@@ -24,6 +21,12 @@ body {
   min-height: 100vh;
 }
 
+/* Плавная прокрутка для якорей */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--olive);
   font-weight: 700;
@@ -31,33 +34,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================================
-   Навигация (Navbar)
+   2. ОБЩИЕ КОМПОНЕНТЫ BOOTSTRAP
    ========================================= */
-.navbar {
-  background-color: var(--olive) !important;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 1rem 0;
-}
 
-.navbar-brand {
-  font-size: 1.5rem;
-  letter-spacing: 1px;
-}
-
-.nav-link {
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover, .nav-link.active {
-  color: #F4F5F0 !important;
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-/* =========================================
-   Кнопки
-   ========================================= */
+/* --- Кнопки --- */
 .btn {
   border-radius: 8px; 
   font-weight: 600;
@@ -90,9 +70,15 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
-/* =========================================
-   Карточки (Card)
-   ========================================= */
+/* Убираем синие фокусы у кнопок и полей */
+.btn:focus, .btn:active, 
+.form-control:focus, .form-select:focus {
+  outline: none !important;
+  box-shadow: 0 0 0 0.25rem rgba(200, 121, 65, 0.4) !important; 
+  border-color: var(--terracotta) !important;
+}
+
+/* --- Карточки --- */
 .card {
   border: 1px solid rgba(0,0,0,0.05);
   border-radius: 16px;
@@ -115,15 +101,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--olive);
 }
 
-/* Цены */
-.text-primary {
-  color: var(--terracotta) !important;
-  font-weight: bold;
+/* Картинки в карточках товаров */
+.product-img {
+  height: 250px;
+  object-fit: cover; 
+  width: 100%;
 }
 
-/* =========================================
-   Бейджи (Метки "Хит", "Новинка")
-   ========================================= */
+/* --- Бейджи и Плашки --- */
 .badge {
   padding: 0.5em 0.8em;
   border-radius: 20px;
@@ -131,18 +116,19 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.5px;
 }
 
-/* =========================================
-   Плашка Alert (Скидка)
-   ========================================= */
 .alert {
   border-radius: 12px;
   border: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* =========================================
-   Формы и поля ввода
-   ========================================= */
+/* Цены */
+.text-primary {
+  color: var(--terracotta) !important;
+  font-weight: bold;
+}
+
+/* --- Формы --- */
 .form-control, .form-select {
   border-radius: 8px;
   border: 1px solid #ced4da;
@@ -162,56 +148,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid #ced4da;
 }
 
-
-/* =========================================
-   Стили для Аккордеона (Частые вопросы)
-   ========================================= */
-.accordion {
-  /* Убираем стандартную рамку у самого контейнера */
-  border: none; 
-}
-
-.accordion-item {
-  /* Каждый вопрос — это отдельная карточка */
-  border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 12px !important; /* Скругляем углы */
-  margin-bottom: 16px; /* ДОБАВЛЯЕМ ОТСТУП МЕЖДУ ВОПРОСАМИ */
-  background-color: var(--white);
-  box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Легкая тень */
-  overflow: hidden; /* Чтобы текст не вылезал за скругления */
-}
-
-/* Убираем стандартную линию сверху у первого элемента */
-.accordion-item:first-of-type {
-  border-top: 1px solid rgba(0,0,0,0.08); 
-}
-
-.accordion-button {
-  background-color: var(--white);
-  color: var(--olive);
-  font-weight: 600;
-  padding: 1.2rem 1.5rem;
-  box-shadow: none !important; /* Убираем синюю обводку */
-  border: none;
-}
-
-/* Когда вопрос открыт */
-.accordion-button:not(.collapsed) {
-  background-color: rgba(163, 177, 138, 0.1); /* Легкий шалфейный фон */
-  color: var(--olive);
-}
-
-/* Внутренний текст ответа */
-.accordion-body {
-  padding: 1.2rem 1.5rem;
-  background-color: var(--white);
-  color: var(--text-dark);
-  border-top: 1px solid rgba(0,0,0,0.05); /* Линия между вопросом и ответом */
-}
-
-/* =========================================
-   Таблица
-   ========================================= */
+/* --- Таблица --- */
 .table {
   border-radius: 12px;
   overflow: hidden;
@@ -224,42 +161,123 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
 }
 
+/* --- Аккордеон (Частые вопросы) --- */
+.accordion {
+  border: none; 
+}
+
+.accordion-item {
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px !important; 
+  margin-bottom: 16px; 
+  background-color: var(--white);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03); 
+  overflow: hidden; 
+}
+
+.accordion-item:first-of-type {
+  border-top: 1px solid rgba(0,0,0,0.08); 
+}
+
+.accordion-button {
+  background-color: var(--white);
+  color: var(--olive);
+  font-weight: 600;
+  padding: 1.2rem 1.5rem;
+  box-shadow: none !important; 
+  border: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: rgba(163, 177, 138, 0.1); 
+  color: var(--olive);
+}
+
+.accordion-body {
+  padding: 1.2rem 1.5rem;
+  background-color: var(--white);
+  color: var(--text-dark);
+  border-top: 1px solid rgba(0,0,0,0.05); 
+}
+
 /* =========================================
-   Подвал (Footer)
+   3. НАВИГАЦИЯ (NAVBAR)
    ========================================= */
-footer {
-  background-color: #2B2B2B !important;
-  margin-top: auto; 
+.navbar {
+  background-color: var(--olive) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: 1rem 0;
 }
 
-.product-img {
-  height: 250px;
-  object-fit: cover; 
-  width: 100%;
+.navbar-brand {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
 }
 
-.btn:focus, 
-.btn:active, 
-.form-control:focus, 
-.form-select:focus {
-  outline: none !important;
-  box-shadow: 0 0 0 0.25rem rgba(200, 121, 65, 0.4) !important; /* Терракотовая тень */
-  border-color: var(--terracotta) !important;
+.nav-link {
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
+.nav-link:hover, .nav-link.active {
+  color: #F4F5F0 !important;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
 
 .nav-link:focus {
   outline: none;
   text-decoration: underline;
   text-underline-offset: 5px;
 }
+
 /* =========================================
-   Стильный подвал (в стиле скриншота)
+   4. КАСТОМНЫЕ БЛОКИ СТРАНИЦ
+   ========================================= */
+
+/* Блок "Наши принципы" (about.html) */
+.border-olive {
+  border-color: var(--olive) !important;
+}
+
+/* Блок акций и лояльности (index.html) */
+.text-terracotta {
+  color: var(--terracotta) !important;
+}
+
+.text-olive {
+  color: var(--olive) !important;
+}
+
+.loyalty-card-promo {
+  background-color: rgba(200, 121, 65, 0.08) !important; 
+  border: 1px solid rgba(200, 121, 65, 0.2) !important;  
+}
+.loyalty-card-promo:hover {
+  background-color: rgba(200, 121, 65, 0.12) !important;
+}
+
+.loyalty-card-club {
+  background-color: rgba(163, 177, 138, 0.15) !important; 
+  border: 1px solid rgba(106, 123, 75, 0.2) !important;   
+}
+.loyalty-card-club:hover {
+  background-color: rgba(163, 177, 138, 0.2) !important;
+}
+
+#loyalty hr {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin: 1rem 0;
+}
+
+/* =========================================
+   5. БОЛЬШОЙ ПОДВАЛ (FOOTER)
    ========================================= */
 .site-footer {
-  background-color: #5e4a41; /* Теплый коричневый (кофейный) фон */
-  color: #d1c8c3; /* Светло-песочный цвет текста */
+  background-color: #5e4a41; /* Теплый кофейный фон */
+  color: #d1c8c3; 
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: auto; 
 }
 
 .site-footer a {
@@ -277,7 +295,7 @@ footer {
 }
 
 .footer-title {
-  color: #a89991; /* Более приглушенный цвет для заголовков колонок */
+  color: #a89991; 
   font-size: 0.95rem;
   font-weight: 400;
   margin-bottom: 1.2rem;
@@ -292,7 +310,7 @@ footer {
 
 .footer-docs a:hover,
 .footer-menu a:hover {
-  transform: translateX(3px); /* Легкий сдвиг вправо при наведении */
+  transform: translateX(3px); 
   color: #ffffff;
 }
 
@@ -301,62 +319,17 @@ footer {
   color: #e0d8d3;
 }
 
-/* Кнопка "Онлайн-запись" */
+/* Кнопка "Онлайн-запись" в подвале */
 .site-footer .btn-outline-light:hover {
   background-color: #ffffff;
   color: #5e4a41;
 }
 
-/* Разделитель и копирайт */
+/* Разделитель и копирайт в подвале */
 .site-footer hr {
   border-color: #7a655b !important;
   opacity: 0.5;
 }
 .site-footer .text-muted {
   color: #9d8e86 !important;
-}
-/* Плавная прокрутка для якорей */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Отступ, чтобы липкое меню не перекрывало заголовок категории */
-}
-/* =========================================
-   Стили для блока акций и лояльности (Мягкие тона)
-   ========================================= */
-.text-terracotta {
-  color: var(--terracotta) !important;
-}
-
-.text-olive {
-  color: var(--olive) !important;
-}
-
-/* Акции — мягкий персиковый фон */
-.loyalty-card-promo {
-  background-color: rgba(200, 121, 65, 0.08) !important; /* Терракотовый с прозрачностью 8% */
-  border: 1px solid rgba(200, 121, 65, 0.2) !important;  /* Легкая рамка */
-}
-
-/* Лояльность — мягкий шалфейный фон */
-.loyalty-card-club {
-  background-color: rgba(163, 177, 138, 0.15) !important; /* Шалфейный с прозрачностью 15% */
-  border: 1px solid rgba(106, 123, 75, 0.2) !important;   /* Легкая рамка */
-}
-
-/* Делаем разделитель (hr) внутри этих карточек аккуратнее */
-#loyalty hr {
-  border-top: 1px solid rgba(0,0,0,0.1);
-  margin: 1rem 0;
-}
-
-/* Эффект при наведении (чтобы карточки не выбивались из общей концепции) */
-.loyalty-card-promo:hover {
-  background-color: rgba(200, 121, 65, 0.12) !important;
-}
-.loyalty-card-club:hover {
-  background-color: rgba(163, 177, 138, 0.2) !important;
-}
-/* Стили для блока "Наши принципы" */
-.border-olive {
-  border-color: var(--olive) !important;
 }
