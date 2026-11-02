@@ -167,49 +167,46 @@ h1, h2, h3, h4, h5, h6 {
    Стили для Аккордеона (Частые вопросы)
    ========================================= */
 .accordion {
-  border-radius: 8px;
+  /* Убираем стандартную рамку у самого контейнера */
+  border: none; 
 }
 
 .accordion-item {
+  /* Каждый вопрос — это отдельная карточка */
   border: 1px solid rgba(0,0,0,0.08);
-  border-radius: 12px !important; /* Скругляем каждый блок */
-  margin-bottom: 12px; /* ДОБАВЛЯЕМ ОТСТУП МЕЖДУ ВОПРОСАМИ */
-  overflow: hidden;
+  border-radius: 12px !important; /* Скругляем углы */
+  margin-bottom: 16px; /* ДОБАВЛЯЕМ ОТСТУП МЕЖДУ ВОПРОСАМИ */
   background-color: var(--white);
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03); /* Легкая тень для объема */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03); /* Легкая тень */
+  overflow: hidden; /* Чтобы текст не вылезал за скругления */
 }
 
-/* Убираем стандартную рамку сверху, которая ломает дизайн */
-.accordion-item:first-of-type,
-.accordion-item:last-of-type {
-  border-radius: 12px !important;
+/* Убираем стандартную линию сверху у первого элемента */
+.accordion-item:first-of-type {
+  border-top: 1px solid rgba(0,0,0,0.08); 
 }
 
 .accordion-button {
   background-color: var(--white);
   color: var(--olive);
   font-weight: 600;
-  padding: 1.25rem 1.5rem; /* Делаем кнопку повыше и попросторнее */
-  box-shadow: none !important;
+  padding: 1.2rem 1.5rem;
+  box-shadow: none !important; /* Убираем синюю обводку */
+  border: none;
 }
 
-/* Цвет заголовка при открытии */
+/* Когда вопрос открыт */
 .accordion-button:not(.collapsed) {
-  background-color: rgba(163, 177, 138, 0.1);
+  background-color: rgba(163, 177, 138, 0.1); /* Легкий шалфейный фон */
   color: var(--olive);
 }
 
-/* Убираем синюю обводку при клике */
-.accordion-button:focus {
-  border-color: rgba(0,0,0,0.1);
-  box-shadow: none !important;
-}
-
-/* Внутренние отступы текста */
+/* Внутренний текст ответа */
 .accordion-body {
-  padding: 1.25rem 1.5rem;
+  padding: 1.2rem 1.5rem;
   background-color: var(--white);
   color: var(--text-dark);
+  border-top: 1px solid rgba(0,0,0,0.05); /* Линия между вопросом и ответом */
 }
 
 /* =========================================
