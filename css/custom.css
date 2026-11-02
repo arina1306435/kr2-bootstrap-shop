@@ -294,3 +294,11 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--white);
   transform: translateY(-3px);
 }
+.site-footer .footer-title {
+  text-align: center;
+}
+
+.footer-menu {
+  text-align: center;
+  margin-top: 3rem;
+}
