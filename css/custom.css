@@ -268,10 +268,9 @@ h1, h2, h3, h4, h5, h6 {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  width: 50px;
-  height: 50px;
-  background-color: var(--olive);
-  color: var(--white);
+  width: 60px;  
+  height: 60px;
+  background-color: #ffffff; 
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -280,6 +279,12 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
   text-decoration: none;
+  border: 2px solid var(--terracotta); 
+}
+
+.scroll-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(200, 121, 65, 0.4); 
 }
 
 .arrow-icon {
@@ -305,4 +310,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 body {
   cursor: url('images/курсор.png'),  16 16, auto;
+}
+.brand-logo {
+  max-height: 80px; 
+  width: 100%;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+.brand-logo.zoom {
+  transform: scale(2.2); 
 }
